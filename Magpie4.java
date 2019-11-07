@@ -33,19 +33,19 @@ public class Magpie4
         String response = "";
         if (statement.length() == 0)
         {
-            response = "Say something, please.";
+            response = "Say something, please. I'm waiting.";
         }
 
         else if (findKeyword(statement, "no") >= 0)
         {
-            response = "Why so negative?";
+            response = "That's what I like to hear. I like someone who says 'no' to everything.";
         }
         else if (findKeyword(statement, "mother") >= 0
                 || findKeyword(statement, "father") >= 0
                 || findKeyword(statement, "sister") >= 0
                 || findKeyword(statement, "brother") >= 0)
         {
-            response = "Tell me more about your family.";
+            response = "Your family sounds boring. My family is way better than yours.";
         }
 
         // Responses which require transformations
@@ -74,7 +74,11 @@ public class Magpie4
             {
                 response = transformYouMeStatement(statement);
             }
-            
+            else if (psnOfYou >= 0
+                    && findKeyword(statement, "are", psnOfYou) >= 0)
+            {
+                response = transformYoMama(statement);
+            }
             else if (psnOfI >= 0 && findKeyword(statement, "you", psnOfI) >= 0)
             {
                 response = transformISomethingYou(statement);
@@ -187,6 +191,25 @@ public class Magpie4
         
         String restOfStatement = statement.substring(psnOfI + 1, psnOfyou).trim();
         return "Why do you " + restOfStatement + " me?";
+    }
+    
+    private String transformYoMama(String statement)
+    {
+        //  Remove the final period, if there is one
+        statement = statement.trim();
+        String lastChar = statement.substring(statement
+                .length() - 1);
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0, statement
+                    .length() - 1);
+        }
+        
+        int psnOfyou = findKeyword (statement, "you", 0);
+        int psnOfare = findKeyword (statement, "are", psnOfyou + 3);
+        
+        String restOfStatement = statement.substring(psnOfyou + 3, psnOfare).trim();
+        return "Yo mama " + restOfStatement + ".";
     }
     
 
