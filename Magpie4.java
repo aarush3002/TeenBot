@@ -33,7 +33,7 @@ public class Magpie4
         String response = "";
         if (statement.length() == 0)
         {
-            response = "Say something, please. I'm waiting.";
+            response = "Say something, dummy. I'm waiting.";
         }
 
         else if (findKeyword(statement, "no") >= 0)
@@ -47,7 +47,23 @@ public class Magpie4
         {
             response = "Your family sounds boring. My family is way better than yours.";
         }
-
+        
+        else if (findKeyword(statement, "How are you", 0) >= 0)
+        {
+            response = "I was fine until you asked.";
+        }
+        
+        
+        else if (findKeyword(statement, "grades", 0) >= 0)
+        {
+            response = "I have all A's, as usual. What are your grades?";
+        }
+        
+        else if (findKeyword(statement, "Hello", 0) >= 0 || findKeyword(statement, "hi", 0) >= 0)
+        {
+            response = "Sup bruh. How you doin'?";
+        }
+        
         // Responses which require transformations
         else if (findKeyword(statement, "I want to", 0) >= 0)
         {
@@ -59,6 +75,11 @@ public class Magpie4
         {
             response = transformIWantSomething(statement);
         }
+        
+        else if (findKeyword(statement, "You are", 0) >= 0)
+            {
+                response = transformYoMama(statement);
+            }
         
         //Activity 4 #3
         //transformISomethingYou
@@ -73,11 +94,6 @@ public class Magpie4
                     && findKeyword(statement, "me", psnOfYou) >= 0)
             {
                 response = transformYouMeStatement(statement);
-            }
-            else if (psnOfYou >= 0
-                    && findKeyword(statement, "are", psnOfYou) >= 0)
-            {
-                response = transformYoMama(statement);
             }
             else if (psnOfI >= 0 && findKeyword(statement, "you", psnOfI) >= 0)
             {
@@ -192,7 +208,23 @@ public class Magpie4
         String restOfStatement = statement.substring(psnOfI + 1, psnOfyou).trim();
         return "Why do you " + restOfStatement + " me?";
     }
-    
+    /*
+    private String transformIWantSomething(String statement)
+    {
+        //  Remove the final period, if there is one
+        statement = statement.trim();
+        String lastChar = statement.substring(statement
+                .length() - 1);
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0, statement
+                    .length() - 1);
+        }
+        int psn = findKeyword (statement, "I want", 0);
+        String restOfStatement = statement.substring(psn + 6).trim();
+        return "Would you really be happy if you had " + restOfStatement + "?";
+    }
+    */
     private String transformYoMama(String statement)
     {
         //  Remove the final period, if there is one
@@ -205,14 +237,12 @@ public class Magpie4
                     .length() - 1);
         }
         
-        int psnOfyou = findKeyword (statement, "you", 0);
-        int psnOfare = findKeyword (statement, "are", psnOfyou + 3);
-        
-        String restOfStatement = statement.substring(psnOfyou + 3, psnOfare).trim();
+        int psn = findKeyword (statement, "You are", 0);
+        String restOfStatement = statement.substring(psn + 7).trim();
         return "Yo mama " + restOfStatement + ".";
     }
     
-
+    
     
     
     /**
@@ -287,19 +317,19 @@ public class Magpie4
         
         if (whichResponse == 0)
         {
-            response = "Interesting, tell me more.";
+            response = "Le DaNk MeMeRs.";
         }
         else if (whichResponse == 1)
         {
-            response = "Hmmm.";
+            response = "Do you even lift bro?";
         }
         else if (whichResponse == 2)
         {
-            response = "Do you really think so?";
+            response = "Ayy bruh.";
         }
         else if (whichResponse == 3)
         {
-            response = "You don't say.";
+            response = "Me no understandie.";
         }
         else if (whichResponse == 4)
         {
