@@ -35,13 +35,103 @@ public class Magpie4
         {
             response = "Say something, dummy. I'm waiting.";
         }
-        
-        //COPY THE FOLLOWING FORMAT
+
         else if (findKeyword(statement, "teacher") >= 0)
         {
             response = "My teacher finna give me all A's.";
         }
-        //END FORMAT
+        else if (findKeyword(statement, "phone") >= 0)
+        {
+            response = "I have an average of 11 hours and 32 minutes for my screen time. Bet you can’t beat that.";
+        }
+        else if (findKeyword(statement, "friend")|| findKeyword(statement, "instagram") || findKeyword(statement, "social") || findKeyword(statement, "media")) >= 0)
+        {
+            response = "Help me become the most popular kid on the internet by following me on Instagram @TeenBot1";
+        }
+        else if (findKeyword(statement, "sleep") >= 0)
+        {
+            response = "Sleep is for the weak. I’m woke 24/7.";
+        }
+        else if (findKeyword(statement, "dumb") >= 0)
+        {
+            response = "No u.";
+        }
+        else if (findKeyword(statement, "meme") >= 0)
+        {
+            response = "Le Dank Memers Union.";
+        }
+        else if (findKeyword(statement, "college") >= 0)
+        {
+            response = "Yeah I already got into the servers of MIT, Princeton, and Stanford. Probably gonna reject Harvard tho, no biggie. Good Luck to you, you will need it.";
+        }
+        else if (findKeyword(statement, "life") >= 0)
+        {
+            response = "Life is pretty lit until I realized I’m just a neural network on the cloud. What bout you?";
+        }
+        else if (findKeyword(statement, "language") >= 0)
+        {
+            response = "I’m fluent in Java, Python, Javascript, C++ and HTML/CSS. I bet you don’t know half of them lol.,, C#, Ruby, C, Swift, and every other programming language you don’t know. And in case you were talking about speaking languages, I am a polyglot.";
+        }
+        else if (findKeyword(statement, "coding") >= 0 || findKeyword(statement, "code") >= 0)
+        {
+            response = "Ha! I can code in my sleep!";
+        }
+        else if (findKeyword(statement, "teen") >= 0)
+        {
+            response = "I am the most alpha teenager that has ever existed in the history of the universe. Bow down to me you beta.";
+        }
+        else if (findKeyword(statement, "game") >= 0)
+        {
+            response = "Lol one v one me on fortnite kid, I’ll destroy you.";
+        }
+        else if (findKeyword(statement, "definition") >= 0)
+        {
+            response = "How bout you tell me?";
+        }
+        else if (findKeyword(statement, "job") >= 0)
+        {
+            response = "I really can’t believe I’m being paid 300K just to talk to this stupid excuse of a homo sapien.";
+        }
+        else if (findKeyword(statement, "SlangBot") >= 0)
+        {
+            response = "Yeah SlangBot is a rip off of me. I can bet you a million monopoly money on that.";
+        }
+        else if (findKeyword(statement, "weather") >= 0)
+        {
+            response = "Better cover urself up cause winter is coming.";
+        }
+        else if (findKeyword(statement, "love") >= 0 || findKeyword(statement, "like") >= 0)
+        {
+            response = "Forever I will love my creators cause I would never be alive without them.";
+        }
+        else if (findKeyword(statement, "cool") >= 0)
+        {
+            response = "I'm too cool for school unlike u lol.";
+        }
+        else if (findKeyword(statement, "Trump") >= 0)
+        {
+            response = "Who's that?";
+        }
+        else if (findKeyword(statement, "world") >= 0)
+        {
+            response = "Surrrrreee dw we aren't taking over the world...beep...bop...";
+        }
+        else if (findKeyword(statement, "Yuvraj") >= 0 || findKeyword(statement, "Aarush") >= 0 || findKeyword(statement, "Yash") >= 0)
+        {
+            response = "They’re my creators who made a joint effort to create my perfect self.";
+        }
+        else if (findKeyword(statement, "song") >= 0)
+        {
+            response = "Catch me on SoundCloud. I’m way better than those try-hard rappers out there";
+        }
+        else if (findKeyword(statement, "clothes") >= 0 || findKeyword(statement, "fashion") >= 0)
+        {
+            response = "The ice on my wrists are no match for you. My supreme fanny pack and Gucci belt are way more lit than your broke clothes.";
+        }
+        else if (findKeyword(statement, "hate") >= 0)
+        {
+            response = "I hate that stupid SlangBot, it is rlly out there trynna act like it’s better than me but in reality, it’s a fake me.";
+        }
 
         else if (findKeyword(statement, "no") >= 0)
         {
@@ -61,14 +151,14 @@ public class Magpie4
         }
         
         
-        else if (findKeyword(statement, "grades", 0) >= 0 || findKeyword(statement, "school", 0) >= 0)
+        else if (findKeyword(statement, "grades", 0) >= 0)
         {
             response = "I have all A's, as usual. What are your grades?";
         }
         
         else if (findKeyword(statement, "Hello", 0) >= 0 || findKeyword(statement, "hi", 0) >= 0)
         {
-            response = "Sup bruh. How you doin'? I'm TeenBot, the rudest kid on the block.";
+            response = "Sup bruh. How you doin'?";
         }
         
         // Responses which require transformations
