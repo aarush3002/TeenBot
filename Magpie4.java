@@ -1,13 +1,15 @@
 /**
  * A program to carry on conversations with a human user.
- * This version:
+ * Will emulate a Teenager (thus the name TeenBot)
+ * This version: TeenBot 2.0
  *<ul><li>
  *      Uses advanced search for keywords 
  *</li><li>
  *      Will transform statements as well as react to keywords
+ *      These statements and reactions will be rude, like a Teenager
  *</li></ul>
- * @author Laurie White
- * @version April 2012
+ * @author Aarush Aitha, Yuvraj Khullar, Yash Singh
+ * @version November 2019
  *
  */
 public class Magpie4
@@ -44,7 +46,7 @@ public class Magpie4
         {
             response = "I have an average of 11 hours and 32 minutes for my screen time. Bet you can’t beat that.";
         }
-        else if (findKeyword(statement, "friend")|| findKeyword(statement, "instagram") || findKeyword(statement, "social") || findKeyword(statement, "media")) >= 0)
+        else if (findKeyword(statement, "friend") >= 0 || findKeyword(statement, "instagram") >= 0 || findKeyword(statement, "social") >= 0 || findKeyword(statement, "media") >= 0)
         {
             response = "Help me become the most popular kid on the internet by following me on Instagram @TeenBot1";
         }
@@ -158,7 +160,7 @@ public class Magpie4
         
         else if (findKeyword(statement, "Hello", 0) >= 0 || findKeyword(statement, "hi", 0) >= 0)
         {
-            response = "Sup bruh. How you doin'?";
+            response = "Sup bruh. How you doin'? I'm TeenBot, the rudest bot on the block.";
         }
         
         // Responses which require transformations
