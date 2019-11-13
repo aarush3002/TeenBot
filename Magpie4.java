@@ -35,6 +35,13 @@ public class Magpie4
         {
             response = "Say something, dummy. I'm waiting.";
         }
+        
+        //COPY THE FOLLOWING FORMAT
+        else if (findKeyword(statement, "teacher") >= 0)
+        {
+            response = "My teacher finna give me all A's.";
+        }
+        //END FORMAT
 
         else if (findKeyword(statement, "no") >= 0)
         {
@@ -54,14 +61,14 @@ public class Magpie4
         }
         
         
-        else if (findKeyword(statement, "grades", 0) >= 0)
+        else if (findKeyword(statement, "grades", 0) >= 0 || findKeyword(statement, "school", 0) >= 0)
         {
             response = "I have all A's, as usual. What are your grades?";
         }
         
         else if (findKeyword(statement, "Hello", 0) >= 0 || findKeyword(statement, "hi", 0) >= 0)
         {
-            response = "Sup bruh. How you doin'?";
+            response = "Sup bruh. How you doin'? I'm TeenBot, the rudest kid on the block.";
         }
         
         // Responses which require transformations
